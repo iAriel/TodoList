@@ -28,7 +28,7 @@
   
   h1 {
     margin: 32px 0;
-    color: #fff;
+    color: #1d1d1d;
     font-size: 24px;
   }
   
@@ -38,7 +38,23 @@
   }
   
   .todo-form {
-    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #eff9f0;
+
+    color: #1d1d1d;
+
+    padding: 5rem;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+
+    border-radius: 8px;
+     
+    box-shadow: 8px 8px 25px -12px #000000;
   }
   
   .todo-input {
@@ -48,17 +64,61 @@
     outline: none;
     width: 320px;
     background: transparent;
-    color: #fff;
+    color: #1d1d1d;
+    margin-bottom: 1rem;
   }
   
   .todo-input::placeholder {
-    color: #e2e2e2;
+    color: #1d1d1d;
+  }
+
+  .todo-radio {
+    display: flex;
+    align-items: space-between;
+    margin-bottom: 1rem;
+    color: #1d1d1d;
+  }
+
+  .todo-radio > input {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .todo-column {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    gap: 10px;
+  }
+
+  .personal-todos {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    border-right: 1px solid #ffffff;
+  }
+
+  .personal-todos > label {
+   font-size: 1.5rem;
+  }
+  .work-todos {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    border-left: 1px solid #ffffff;
   }
   
+  .work-todos > label {
+    font-size: 1.5rem;
+  }
+
   .todo-button {
     padding: 16px;
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
     cursor: pointer;
     outline: none;
     background: linear-gradient(
