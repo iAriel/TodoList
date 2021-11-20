@@ -20,8 +20,6 @@ function TodoList() {
             const newTodos = [todo, ...workTodos];
             setWorkTodos(newTodos)
         }
-        console.log(todos, workTodos)
-        
     };
 
     const removeTodo = id =>{
@@ -43,26 +41,43 @@ function TodoList() {
     };
 
     const updatedTodo = (todoId, newValue) => {
+        console.log(newValue);
         if(!newValue.text || /^\s*$/.test(newValue.text)){
             return
         }
-        const existId = todos.find(todo => {
+        const existInPersonal = todos.find(todo => {
             if(todo.id === todoId){
                 return todo;
             }
         });
 
-        if(existId){
-            setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
-        }else{
-            setWorkTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
+        if (existInPersonal) {
+
+            if (existInPersonal.category !== newValue.category) {
+                removeTodo(existInPersonal.id)
+                setWorkTodos([...workTodos, newValue])
+            } else {
+                setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
+            }
+        } else {
+            const existInWork = workTodos.find(todo => {
+                if(todo.id === todoId){
+                    return todo;
+                }
+            })
+            removeTodo(todoId)
+            if(existInWork.category !== newValue.category){
+                removeTodo(existInWork.id)
+                setTodos([...todos, newValue])
+            } else {
+                setWorkTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
+            }
         }
-        
     };
 
     const completeTodo = id => {
         const existId = todos.find(todo => {
-            if(todo.id == id){
+            if(todo.id === id){
                 return todo;
             }
         });

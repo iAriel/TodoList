@@ -7,14 +7,16 @@ import {TiEdit} from 'react-icons/ti'
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
     const [edit, setEdit] = useState({
         id: null,
-        value: ''
+        value: '',
+        category: ''
     });
 
     const submitUpdate = value => {
         updateTodo(edit.id, value);
         setEdit({
           id: null,
-          value: ''
+          value: '',
+          category: ''
         });
       };
     
@@ -28,7 +30,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
             key={index}
         >
             <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-                {todo.text}
+                {todo.text} {todo.category}
             </div>
             <div className="icons">
                 <BiTrash 
@@ -38,7 +40,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
                 <TiEdit 
                     onClick={() => setEdit({
                         id: todo.id,
-                        value: todo.text
+                        value: todo.text,
                     })}
                     className="edit-icon"
                 />

@@ -45,12 +45,12 @@ function TodoForm(props) {
                         ref={inputRef}
                     />
                     <div className="todo-radio">
-                        <label for="personal">Pessoal
-                            <input type="radio" id="personal" name="category" value="pessoal" checked={true}/>
+                        <label>Pessoal
+                            <input type="radio" id="personal" name="category" value="pessoal" onChange={handleChangeRadio}/>
                         </label> 
                         
-                        <label for="work">Trabalho
-                            <input type="radio" id="work" name="category" value="trabalho" />
+                        <label>Trabalho
+                            <input type="radio" id="work" name="category" value="trabalho" onChange={handleChangeRadio}/>
                         </label>
                         
                     </div>
@@ -68,9 +68,9 @@ function TodoForm(props) {
                     ref={inputRef}
                 />
                 <div className="todo-radio">
-                    <label for="personal">Pessoal</label> 
+                    <label>Pessoal</label> 
                     <input type="radio" id="personal" name="category" value="pessoal" onChange={handleChangeRadio}/>
-                    <label for="work">Trabalho</label>
+                    <label>Trabalho</label>
                     <input type="radio" id="work" name="category" value="trabalho" onChange={handleChangeRadio}/>
                 </div>
                 <button className="todo-button"> Adicionar </button>
