@@ -41,7 +41,6 @@ function TodoList() {
     };
 
     const updatedTodo = (todoId, newValue) => {
-        console.log(newValue);
         if(!newValue.text || /^\s*$/.test(newValue.text)){
             return
         }
@@ -51,8 +50,11 @@ function TodoList() {
             }
         });
 
-        if (existInPersonal) {
 
+        if (existInPersonal) {
+            if(newValue.category !== 'pessoal' && newValue.category !== 'trabalho'){
+                newValue.category = existInPersonal.category;
+            }
             if (existInPersonal.category !== newValue.category) {
                 removeTodo(existInPersonal.id)
                 setWorkTodos([...workTodos, newValue])
@@ -65,8 +67,11 @@ function TodoList() {
                     return todo;
                 }
             })
-            removeTodo(todoId)
+            if(newValue.category !== 'pessoal' && newValue.category !== 'trabalho'){
+                newValue.category = existInWork.category;
+            }
             if(existInWork.category !== newValue.category){
+                console.log(existInWork, newValue)
                 removeTodo(existInWork.id)
                 setTodos([...todos, newValue])
             } else {

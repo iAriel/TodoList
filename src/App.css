@@ -98,10 +98,12 @@
     flex-direction: column;
     width: 50%;
     border-right: 1px solid #ffffff;
+    word-break: break-word;
   }
 
   .personal-todos > label {
    font-size: 1.5rem;
+   color:#eff9f0
   }
   .work-todos {
     display: flex;
@@ -109,10 +111,12 @@
     flex-direction: column;
     width: 50%;
     border-left: 1px solid #ffffff;
+    word-break: break-word;
   }
   
   .work-todos > label {
     font-size: 1.5rem;
+    color:#eff9f0;
   }
 
   .todo-button {
@@ -165,7 +169,7 @@
     border-radius: 5px;
     width: 90%;
   }
-  
+
   .todo-row:nth-child(4n + 1) {
     background: linear-gradient(
       90deg,
