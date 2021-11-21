@@ -209,3 +209,74 @@
   .edit-icon {
     color: #fff;
   }
+
+  .not-todo{
+    width: 25rem;
+    height: 25rem;
+  }
+
+  @media (max-width: 998px){
+    h1 {
+      font-size:1.2rem;
+    }
+  }
+
+  @media (max-width: 899px){
+    h1{
+      font-size: 1.2rem
+    }
+
+    .todo-input {
+      width: 17rem;
+    }
+
+    .not-todo{
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+
+  @media (max-width: 719px){
+    .todo-input {
+      width: 15rem;
+    }
+
+    .todo-radio {
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  @media (max-width:651px){
+    h1 {
+      font-size: 1.3rem;
+      width: 15rem;
+      text-align: center;
+    }
+
+    .todo-input {
+      width: 13rem;
+    }
+  }
+
+  @media (max-width: 586px){
+    .not-todo {
+      width:15rem;
+      height: 15rem;
+    }
+  }
+
+  @media (max-width:551px){
+    h1 {
+      font-size: 1rem;
+      width: 15rem;
+      text-align: center;
+    }
+
+    .todo-input {
+      width: 10rem;
+    }
+
+    .todo-radio{
+      flex-direction: column;
+    }
+  }

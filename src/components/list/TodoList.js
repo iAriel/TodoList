@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import TodoForm from '../forms/TodoForm'
 import Todo from '../todo/Todo'
+import Img from '../../assets/svg/DrawKit_Vector_Illustration_Black_Friday_&_Online_Shopping.svg'
+import Img2 from '../../assets/svg/personal_woman.svg'
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
@@ -114,25 +116,33 @@ function TodoList() {
             <div  className="todo-column">
                 <div className="personal-todos">
                     <label> Pessoal </label>
-                    <Todo
+                    {!todos.length ? ( 
+                    <img className="not-todo" src={Img2} alt=""/>
+                    ) : (
+                        <Todo
                         todos={todos} 
                         completeTodo={completeTodo} 
                         removeTodo={removeTodo}
                         updateTodo={updatedTodo}
                     />
+                    )}
+                    
                 </div>
                 <div className="work-todos">
                     <label> Trabalho </label>
-                    <Todo 
-                        todos={workTodos} 
-                        completeTodo={completeTodo} 
-                        removeTodo={removeTodo}
-                        updateTodo={updatedTodo}
-                    />
+                    {!workTodos.length ? (
+                    <img className="not-todo" src={Img} alt="Home loading packages"/>
+                    ):(
+                        <Todo 
+                            todos={workTodos} 
+                            completeTodo={completeTodo} 
+                            removeTodo={removeTodo}
+                            updateTodo={updatedTodo}
+                        />
+                    )}
+                    
                 </div>
-                
             </div>
-            
         </div>
     )
 }
