@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 # TodoList
-todo list de atividades dividido em categorias: Pessoal e trabalho.
+To do list responsive to organize personal and work activities, dividing them into different tables
 =======
 # Getting Started with Create React App
 
